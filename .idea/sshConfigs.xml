@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="vita.fr" id="57bd4c78-8c0e-47c9-956d-6a0dcf7f20e9" port="22" nameFormat="DESCRIPTIVE" username="ines" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

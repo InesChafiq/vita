@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0a3eaca5-3f14-4109-b337-e94b2e9d4876" name="vita.fr" url="http://vita.fr">
+        <fileTransfer rootFolder="/var/www/html/vita" accessType="SFTP" host="vita.fr" port="22" sshConfigId="57bd4c78-8c0e-47c9-956d-6a0dcf7f20e9" sshConfig="ines@vita.fr:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
