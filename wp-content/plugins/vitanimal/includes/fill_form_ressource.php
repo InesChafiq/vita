@@ -65,12 +65,14 @@ function fill_eval_ressource(){
 			$retour .= '<div style="text-align: center;"><h2> Ressource </h2>';
 			$last_date_eval = search_last_date_exam($id_group);
 			if(is_null($last_date_eval[0]->observation)){
-				$retour .= 'Il n\'y a pas d\'évaluation antérieure';
+				$retour .= '<p>Il n\'y a pas d\'évaluation antérieure</p>';
 			}else{
-				$retour .= 'Dernière évaluation: ' . $last_date_eval[0]->observation;
+				$retour .= '<p>Dernière évaluation: ' . $last_date_eval[0]->observation . '</p>';
 			}
+			$retour .= '<button id="réinitialiser"> Réinitialiser</button>';
 
 			$retour .= '<form method="post" class="form">';
+
 			//$titled = array_column($tab_questions_comments, 'titled');
 			//print_r($titled);
 			//print_r($tab_questions_comments[0]->titled);
@@ -110,9 +112,10 @@ function fill_eval_ressource(){
 									array_push( $tab_radio, $tab );
 								}
 								foreach ( $tab_radio as $value ) {
-									$retour .= '<div ' . $style . '><input type="' . $a->type . '" name="type' . $j . '" id="" value="' . $value
-									           . '"><label for="type">' . $value
-									           . '</label></div>';
+									$retour .= '<div style="margin-left: 5%;">
+												<label for="type">' . $value . '</label>
+											    <input type="' . $a->type . '" name="type" value="' . $value
+									           . '"></div>';
 
 								}
 

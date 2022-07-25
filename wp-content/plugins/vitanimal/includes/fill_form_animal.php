@@ -89,9 +89,10 @@ function fill_eval_animal(){
 							}
 							foreach ( $tabDeux as $end ) {
 								//print_r($end);
-								$retour .= '<div style="margin-left: 5%;"><input type="' . $a->type . '" name="type" value="' . $end
-								           . '"><label for="type">' . $end
-								           . '</label></div>';
+								$retour .= '<div style="margin-left: 5%;">
+												<label for="type">' . $end . '</label>
+											    <input type="' . $a->type . '" name="type" value="' . $end
+								           . '"></div>';
 							}
 						}
 

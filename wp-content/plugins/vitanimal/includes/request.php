@@ -100,7 +100,7 @@ function get_all_animal_group_to_observe($id_user){
        s.name as species,  ev.eval_begin, ev.eval_end, ev.id as eval
 		FROM vitanimal_group g, vitanimal_area a, vitanimal_enclosure e, vitanimal_evaluation ev, vitanimal_animal an, wp_users u, vitanimal_species s
 		WHERE g.id_area = a.id AND g.id_enclosure = e.id AND g.id = ev.id_group AND an.id = g.id_animal
-		AND ev.id_user=u.ID AND s.id=an.id_species AND ev.observation IS NULL AND u.ID =' . $id_user );
+		AND ev.id_user=u.ID AND s.id=an.id_species AND ev.observation IS NULL AND u.ID =' . $id_user .' ORDER BY g.name' );
 	$group       = $wpdb->get_results( $query_group );
 	return $group;
 }
@@ -140,7 +140,7 @@ function search_last_date_exam($id_group){
 function put_evaluation_to_complete($id_eval, $date){
 	global $wpdb;
 	$query_add_datetime_to_evaluation = $wpdb->query($wpdb->prepare('UPDATE vitanimal_evaluation 
-										SET observation= ' . $date. ' WHERE id =' . $id_eval));
+										SET observation= "' . $date. '" WHERE id =' . $id_eval));
 	return $query_add_datetime_to_evaluation;
 }
 
@@ -151,5 +151,6 @@ function put_evaluation_to_complete($id_eval, $date){
  */
 function delete_evaluation_in_observation($id_eval){
 	global $wpdb;
-	$query_delete_evaluation_in_observation = $wpdb->prepare('DELETE FROM  vitanimal_observation WHERE id_evaluation = '. $id_eval);
+	$query_delete_evaluation_in_observation = $wpdb->query($wpdb->prepare('DELETE FROM  vitanimal_observation WHERE id_evaluation = '. $id_eval));
+	return $query_delete_evaluation_in_observation;
 }

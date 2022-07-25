@@ -14,6 +14,7 @@ function form_sent(){
 		//print_r(date('Y-m-d H:i:s'));
 		if ( isset( $id_eval ) ) {
 			put_evaluation_to_complete( $id_eval, date( 'Y-m-d H-i-s' ) );
+			delete_evaluation_in_observation($id_eval);
 			$retour .= '<p>Le formulaire a bien été envoyé!</p>
 						<button id="return_home">Retour à l\'accueil</button>';
 		} else {
